@@ -1,0 +1,46 @@
+{
+  "blogs": [
+    {
+      "title": "My new website",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam inventore enim molestiae, nobis iste nihil molestias repudiandae eum provident at harum amet sit quam eos officiis minus! Soluta, dolorum laborum. ....",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "My new website",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam inventore enim molestiae, nobis iste nihil molestias repudiandae eum provident at harum amet sit quam eos officiis minus! Soluta, dolorum laborum. ....",
+      "author": "mario",
+      "id": 3
+    },
+    {
+      "title": "asdfads",
+      "body": "asdfas",
+      "author": "",
+      "id": 4
+    },
+    {
+      "title": "adf",
+      "body": "asdf",
+      "author": "",
+      "id": 6
+    },
+    {
+      "title": "SADF",
+      "body": "SADFDSA",
+      "author": "",
+      "id": 8
+    },
+    {
+      "title": "AFDS",
+      "body": "ASFDSAD",
+      "author": "",
+      "id": 9
+    },
+    {
+      "title": "ASDF",
+      "body": "SADF",
+      "author": "",
+      "id": 10
+    }
+  ]
+}

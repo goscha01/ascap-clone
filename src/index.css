@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+margin:0;
+font-family: 'Quicksand';
+color: #333;
+}
+
+
+/* Navbar component */
+
+.navbar {
+  background-image: linear-gradient(-135deg,#489cef,#175da7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-logo{
+  height: 40px;
+  margin: 40px;
+
+}
+.navbar-logo-small {
+  display: none;
+}
+
+.navbar-button {
+  color: #fff;
+  font-weight: 700;
+  background: transparent;
+  padding: 0.8rem 1rem;
+  text-transform:uppercase;
+  margin: 1rem;
+  border: 2px solid #fafafa;
+  border-radius: 2px;
+
+}
+.navbar h1 {
+  color: #fff;
+  font-family: "Circular Black",sans-serif;
+  font-size: 2rem;
+}
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 18px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+
+/* Main section */
+.main {
+  width: 70%;
+  margin: 40px auto;
+  min-width: 1120px;
+
+}
+
+
+
+
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;;
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
+}
+.blog-preview a{
+  text-decoration: none;
+}
+
+/* blog-details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 10px 0;
+}
+.blog-details button {
+  background: #f1356d;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* create ne blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display:block;
+}
+.create h2 {
+  font-size: 20px;
+  color:#f1356d;
+  margin-bottom: 30px;;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background-color: #f1356d;
+  color: #ddd;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.create .radio {
+  display: flex;
+  justify-items: stretch;
+}
+
+
+/* Accordion Component */
+
+.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  /* min-width:1120px; */
+  padding-bottom: 0;
+}
+
+.accordion-header {
+    display: flex;
+}
+
+.accordion-number {
+  height: 25px;
+  width: 25px;
+  background-color: #a7a7a7;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-left: -12px;
+  color:#ddd;
+}
+
+.accordion-title {
+  color: #a7a7a7;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left:1rem;
+  margin-top: -0.3rem;
+}
+
+.accordion-item {
+  border:none;
+  border-left: 1px solid rgba(0,0,0,.125);
+
+}
+
+.active, .accordion:hover {
+  /* background-color: #ccc; */
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  /* border-left: 1px solid #a7a7a7; */
+}
+
+.accordion-number.active {
+  background-color: #175da7;
+}
+
+.accordion-title.active {
+  color: black;
+  font-weight: 700;
+}
+
+
+/* Content component */
+
+.content-membership {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* Card component */
+
+.card {
+  margin:1rem;
+  min-width: 330px;
+  border: 1px solid #85868c;
+  font-weight: 200;
+  color: gray;
+}
+
+.card.active {
+  border: 1px solid #489cef;
+  color:black;
+  font-weight: 400;
+}
+
+.card.selected {
+  box-shadow: -1px 0px 9px 6px rgba(0,0,0,0.20);
+  font-weight: 500;
+}
+
+
+.card-header{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  border-bottom: 1px solid #85868c;
+
+  background-color:linear-gradient(-180deg,#fafafa 0%,#ededed 100%);
+}
+
+
+.card-header.active{
+  border-bottom: 1px solid #489cef;
+  background-color: #fafafa;
+}
+
+.card-header.selected {
+  background-color: #1178ce
+}
+
+
+.card-title {
+  margin: 0 22px 2px 11px;
+  font-weight: 700;
+  color: gray;
+
+}
+
+.card-title.active{
+  color:#175da7
+}
+
+.card-title.selected {
+  color:rgb(249, 244, 244);
+}
+
+
+.card-fee.active, .card-fee.selected {
+  color: #175da7;
+  font-weight: 700;
+}
+
+.card-fee-text {
+  font-size: small;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+ 
+}
+
+.card ul li {
+  margin-bottom: 1rem;
+}
+
+.card ul li:before {
+  content: '✓';
+  margin:0.3rem;
+
+}
+
+
+/* Form component */
+
+form {
+  margin-left:1rem;
+  position:relative;
+}
+
+form .select {
+  width:80%;
+  padding:0.5rem;
+  margin: 0.5rem;
+  padding-left:0;
+}
+
+form label {
+  position: absolute;
+  transform: translate(20px, -2px);
+  color: #6d6d6d;
+  background-color: #fff;
+  font-size: small;
+  padding: 0 4px;
+  z-index: 2;
+}
+
+form p {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+form button {
+  padding: 0.5rem 4rem;
+  margin-right: 1.2rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+
+form button[type="submit"] {
+  background-color: #1178ce;
+  color:white;
+  border: 1px solid #1178ce;
+  
+}
+
+form button[type="reset"] {
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  border: 1px solid #a7a7a7;
+  
+}
+
+form button:hover {
+  filter: brightness(90%);
+}
+
+/* Select menu */
+
+
+
+.option > label{
+  padding: 0.3rem;
+  border-bottom: 1px solid #85868c;
+  background-color: red;
+  color:#1178ce;
+  text-decoration: underline;
+}
+
+/* Footer component */
+
+.footer{
+  display:flex;
+  background-image: linear-gradient(-135deg,#489cef,#175da7);
+  border-top:1px solid #333;
+  text-justify: center;
+}
+
+.footer .menu {
+  display:flex;
+  margin: 0 auto;
+}
+
+.footer .copyright{
+  color:#fff;
+  grid-column: 1/3;
+  font-size: 0.8em;
+}
+
+.footer .social{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.footer li{
+  margin: 0 6px;
+  list-style: none;
+}
+
+.footer a{
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+footer img{
+  width: 20px;
+}
+
+
+/* media queries */
+
+/*  laptops styles */
+@media screen and (max-width:1160px) {
+  .main {
+    width: 80%;
+    min-width: 990px;
+  }
+
+  .card {
+    min-width: 270px;
+  }
+}
+  /* large tablet */
+@media screen and (max-width:960px) {
+  .main {
+    width: 70%;
+    min-width: 780px;
+  }
+
+  .navbar-logo{
+    height: 30px;
+    margin: 30px;
+  }
+
+  .card {
+    min-width: 620px;
+  }
+
+  .content-membership {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-button {
+    font-size: 0.8rem;
+    padding: 0.8rem 1rem;
+    margin: 1rem;
+  }
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+}
+
+  /* small tablet */
+  @media screen and (max-width:760px) {
+    .main {
+      width: 80%;
+      min-width: 590px;
+    }
+    .navbar-logo{
+      height: 25px;
+      margin: 15px;
+    }
+    .card {
+      min-width: 445px;
+    }
+
+    .navbar-button {
+      font-size: 0.6rem;
+      padding: 0.6rem 0.9rem;
+      margin: 0.8rem;
+      border-width: 0.5px;
+    }
+    .navbar h1 {
+      font-size: 1.3rem;
+      margin-top:0.8rem;
+    }
+
+    form {
+      font-size: 0.9rem;;
+    }
+
+    .accordion-number {
+      height: 20px;
+      width: 20px;
+      margin-left: -10px;
+      font-size: 0.8rem;
+    }
+    
+    .accordion-title {
+      font-size: 1.2rem;
+      margin-left:1rem;
+      margin-top: -0.2rem;
+    }
+  }
+
+
+    /*  phones */
+    @media screen and (max-width:570px) {
+      .main {
+        width: 90%;
+        min-width: 340px;
+      }
+      .navbar-logo{
+        display: none;
+      }
+
+      .navbar-logo-small {
+        display: block;
+        height: 25px;
+      }
+
+      .card {
+        min-width: 265px;
+        font-size: 0.8rem;
+       }
+
+       .card-header{
+         min-height: auto;
+       }
+
+       .card-title {
+        font-size: 1rem;
+       }
+       .card-fee {
+        font-size: 0.8rem;
+       }
+
+      .card ul li {
+        margin: 0;
+      }
+  
+      .navbar-button {
+        /* font-size: 0.5rem;
+        padding: 0.5rem 0.7rem;
+        margin: 0.5rem;
+        border-width: 0.5px; */
+        text-indent: -9999px; line-height: 0;
+      }
+
+      .navbar-button:after {
+        content: "HELP?";
+        text-indent: 0;  display: block; line-height: initial; 
+      }
+      .navbar h1 {
+        font-size: 1rem;
+        margin-top:0.6rem;
+      }
+
+      form {
+        font-size: 0.7rem;;
+      }
+
+      form button {
+        padding: 0.3rem 3rem;
+        margin-right: 1rem;
+        font-size: 0.6rem;
+         }
+
+         form .select {
+           width: 100%;
+         }
+
+      form button[type="reset"] {
+
+        padding: 0.3rem 1.5rem;
+      }
+    }

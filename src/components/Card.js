@@ -24,7 +24,7 @@ export default function Card(props) {
     console.log("isDisabled", isDisabled)
     console.log("isActive", isActive)
   return (
-    <div className={`card ${isActive? 'active' : null}  ${!isDisabled && (props.selectedId === props.content.id)? 'selected' : null}`} 
+    <div  className={`card ${isActive? 'active' : null}  ${!isDisabled && (props.selectedId === props.content.id)? 'selected' : null}`} 
          onMouseEnter={() => setIsActive(true)} 
          onMouseLeave={() => setIsActive(false)}
          onClick={(e) => clickHandler(props.content.id, e)}>

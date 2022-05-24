@@ -1,15 +1,15 @@
+import {useState} from 'react'
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Accordion from "./components/Accordion";
 
-import Content from "./components/Content";
-import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Create from "./Create";
-import BlogDetails from "./BlogDetails";
-import NotFound from "./NotFound";
+import { hasPointerEvents } from '@testing-library/user-event/dist/utils';
+
 
 function App() {
+
+
 
   const accordionData = [
     {
@@ -64,7 +64,12 @@ function App() {
     },
   ];
 
+    const [selectedItem, setSelectedItem] = useState(0);
 
+    function hundleClick(id) {
+      console.log(id)
+      setSelectedItem(id)
+    }
 
   return (
       <div className="App">
@@ -72,7 +77,14 @@ function App() {
         <div className="main">
             <div className="accordion">
             {accordionData.map(({ title, content }, index) => (
-              <Accordion title={title} content={content} index={index} key={index}/>
+              <Accordion 
+                title={title}
+                content={content}
+                index={index}
+                isOpen={index == selectedItem}
+                key={index}
+                getAccId={hundleClick}
+                />
             ))}
           </div>
         </div>

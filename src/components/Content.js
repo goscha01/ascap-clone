@@ -1,14 +1,14 @@
 import React, { useState }from 'react'
-import Form from '../Form';
+import Form from "./Form";
 import Card from "./Card";
 
 
-export default function Content() {
+export default function Content(props) {
 
     const cardContnent = [
         {
         id: 0,
-        icon: "/iwp.png",
+        icon: "/qandb.svg",
         title: "Writer & Publisher",
         text: "ASCAP royalties are split evenly between Writers and Publishers. Join as both to ensure you get paid everything you deserve.",
         fee: 100,
@@ -16,7 +16,7 @@ export default function Content() {
         },
         {
         id: 1,
-        icon: "/iw.png",
+        icon: "/quavers.svg",
         title: "Writer",
         text: "A Writer is someone who creates a musical composition: the melody, harmony, lyrics, arrangements, beats, etc.",
         fee: 50,
@@ -24,7 +24,7 @@ export default function Content() {
             },
             {
         id: 2,
-        icon: "/ip.png",
+        icon: "/briefcase.svg",
         title: "Publisher",
         text: "A Publisher is a person or company that handles the business side of music. Publishers may control the copyrights of a musical composition, licensing, etc.",
         fee: 50,
@@ -33,12 +33,32 @@ export default function Content() {
       ]
     
       const [selectedId, setSelectedId] = useState(null);
+      const [disable, setDisable] = useState(false)
+      const [isNext, setIsNext ] = useState(null)
+      const [isWarning, setWarning] = useState(false)
+    //   let disable = false;
 
       const onChange = (id) => {
-          console.log(selectedId)
-          console.log(id)
+        //   console.log(selectedId)
+        //   console.log(id)
+        setDisable(false)
         setSelectedId(id); 
       };
+
+      const onChange2 = (some2, isInvalid) => {
+        setWarning(isInvalid)
+          console.log('isInvalid', isInvalid)
+          console.log('some2', some2)
+          setIsNext(some2);
+          console.log('isNext', isNext)
+      }
+
+      const onChange3 = (some) => {
+        console.log('some', some)
+        setDisable(some);
+        console.log('disable', disable)
+    }
+
       
   return (
       <div>
@@ -46,9 +66,9 @@ export default function Content() {
             <div className="content-membership">
                 {cardContnent.map((content) => {
                     return (
-                  
-                        <Card content={content} onChange={onChange} selectedId={selectedId} key={content.id}/>
-                
+          
+                        <Card content={content} onChange={onChange} disable={disable} selectedId={selectedId} key={content.id}/>
+        
                     )
                     
                 })}
@@ -56,7 +76,7 @@ export default function Content() {
 
             </div>
            
-            <Form  selected={selectedId}/>
+            <Form onChange2={onChange2} onChange3={onChange3} selected={selectedId}/>
       </div>
 
      

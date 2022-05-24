@@ -65,77 +65,6 @@ color: #333;
 
 
 
-.blog-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;;
-}
-.blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-}
-.blog-preview h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
-}
-.blog-preview a{
-  text-decoration: none;
-}
-
-/* blog-details page */
-.blog-details h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 10px;
-}
-.blog-details div {
-  margin: 10px 0;
-}
-.blog-details button {
-  background: #f1356d;
-  color: #fff;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* create ne blog form */
-.create {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
-}
-.create label {
-  text-align: left;
-  display:block;
-}
-.create h2 {
-  font-size: 20px;
-  color:#f1356d;
-  margin-bottom: 30px;;
-}
-.create input, .create textarea, .create select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-.create button {
-  background-color: #f1356d;
-  color: #ddd;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.create .radio {
-  display: flex;
-  justify-items: stretch;
-}
-
-
 /* Accordion Component */
 
 .accordion {
@@ -248,6 +177,11 @@ color: #333;
 
 .card-header.selected {
   background-color: #1178ce
+}
+
+
+.card img {
+  fill: red;
 }
 
 
@@ -368,6 +302,7 @@ form button:hover {
   display:flex;
   background-image: linear-gradient(-135deg,#489cef,#175da7);
   border-top:1px solid #333;
+  align-items: center;
   text-justify: center;
 }
 
@@ -378,14 +313,14 @@ form button:hover {
 
 .footer .copyright{
   color:#fff;
-  grid-column: 1/3;
   font-size: 0.8em;
+  margin:1rem;
 }
 
 .footer .social{
   display: flex;
   justify-content: flex-end;
-  
+  margin:1rem;
 }
 
 .footer li{
@@ -444,6 +379,26 @@ footer img{
   .navbar h1 {
     font-size: 1.5rem;
   }
+
+ 
+  
+  .footer .menu {
+    font-size: 0.8rem;
+  }
+  
+  .footer .copyright{
+    font-size: 0.6em;
+  }
+  
+ 
+  .footer img {
+    height: 20px;
+  }
+  
+  .footer li{
+    margin: 0 6px;
+  }
+    
 }
 
   /* small tablet */
@@ -487,6 +442,56 @@ footer img{
       margin-left:1rem;
       margin-top: -0.2rem;
     }
+
+  .footer {
+    display:grid;
+    width: 100%;
+    grid-template-areas: "menu "
+                        "social"
+                        "copyright" ;
+    grid-template-rows: 1fr ;
+    grid-template-columns: 1fr ;
+    text-align: center;
+    padding-top: 0.5rem;
+  
+    }
+
+  .menu{
+    grid-area:menu;
+  }
+
+  .copyright{
+    grid-area:copyright;
+  }
+
+  .social{
+    grid-area:social;
+ 
+  }
+
+  .footer .social {
+    justify-content: center;
+    padding: 0;
+    margin:0.2rem;
+  }
+    
+  .footer .menu {
+    font-size: 0.8rem;
+  }
+  
+  .footer .copyright{
+    font-size: 0.6em;
+    margin:0.4rem;
+  }
+  
+ 
+  .footer img {
+    height: 20px;
+  }
+  
+  .footer li{
+    margin: 0 6px;
+  }
   }
 
 
@@ -526,10 +531,6 @@ footer img{
       }
   
       .navbar-button {
-        /* font-size: 0.5rem;
-        padding: 0.5rem 0.7rem;
-        margin: 0.5rem;
-        border-width: 0.5px; */
         text-indent: -9999px; line-height: 0;
       }
 
@@ -560,4 +561,22 @@ footer img{
 
         padding: 0.3rem 1.5rem;
       }
+
+        
+      .footer .menu {
+        font-size: 0.6rem;
+        padding: 0;
+      }
+      
+      .footer .copyright{
+        font-size: 0.6em;
+        margin:0.4rem;
+      }
+      
+     
+      .footer img {
+        height: 15px;
+      }
+      
+ 
     }

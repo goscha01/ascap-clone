@@ -4,14 +4,13 @@ import React , {useState, useEffect} from "react";
 
 export default function Card(props) {
 
-    const [isActive, setIsActive] = useState(true);
-    const [isDisabled, setIsDisabled] = useState(false)
+    const [isActive, setIsActive] = useState(null); 
+    const [isDisabled, setIsDisabled] = useState(null)
      
 
     useEffect(() => {
         setIsActive(props.disable)
         setIsDisabled(props.disable)
- 
     },[props.disable])
    
     const clickHandler = (keyID) => {
@@ -24,7 +23,7 @@ export default function Card(props) {
     console.log("isDisabled", isDisabled)
     console.log("isActive", isActive)
   return (
-    <div  className={`card ${isActive? 'active' : null}  ${!isDisabled && (props.selectedId === props.content.id)? 'selected' : null}`} 
+    <div style={isDisabled?{border:"1px solid red"}:null} className={`card ${isActive? 'active' : null}  ${!isDisabled && (props.selectedId === props.content.id)? 'selected' : null}`} 
          onMouseEnter={() => setIsActive(true)} 
          onMouseLeave={() => setIsActive(false)}
          onClick={(e) => clickHandler(props.content.id, e)}>

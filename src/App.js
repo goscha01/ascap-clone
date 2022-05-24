@@ -67,7 +67,7 @@ function App() {
     const [selectedItem, setSelectedItem] = useState(0);
 
     function hundleClick(id) {
-      console.log(id)
+      console.log("RECEIVED ID", id)
       setSelectedItem(id)
     }
 

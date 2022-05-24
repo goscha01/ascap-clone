@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import Select from "react-select";
 
 const options = [
@@ -38,38 +38,35 @@ const Form = (props) => {
   const [selectedValue, setSelectedValue] = useState(null);
   const [isInvalid, setIsInvalid] = useState(null);
 
-  console.log("isInvalid", isInvalid)
-  console.log("selectedValue", selectedValue)
+  
+  useEffect(() => {
+
+    props.getCountinue(isInvalid);
+    console.log("Insiden USEEFFECT inValid", isInvalid)
+
+})
+
+  // console.log("OUTSIDE OF clickHandler isInvalid ", isInvalid)
+  // console.log("selectedValue", selectedValue)
+  // console.log("props.selected", props.selected)
 
   // console.log(selectedValue)
   const handleChange = (e) => {
-  
-    // console.log(isInvalid);
-    // console.log(e.value);
-    setSelectedValue(e.value);
-    // console.log(isInvalid);
-  };
+     setSelectedValue(e.value);
+   };
 
   const handleSubmit = (e) => {
     if (props.selected !== null && selectedValue !== null) {
       setIsInvalid(false);
+      // console.log("set inVAlid to false")
     } else {
+      // console.log("set inVAlid to true")
       setIsInvalid(true);
     }
+  
     e.preventDefault();
   };
 
-  // console.log("props.selected ", props);
-  const clickHandler = (e) => {
-    // console.log(isInvalid);
-    // console.log(selectedValue);
-    // console.log(props.selected);
-
-    // console.log(isInvalid);
-    // console.log(props);
-    // props.onChange(true);
-    e.preventDefault();
-  };
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
@@ -98,7 +95,7 @@ const Form = (props) => {
           />
         </div>
       )}
-      {isInvalid && props.selected === null && (
+      {isInvalid && props.selected == null && (
         <p style={{ color: "red" }}>Please select your membership type.</p>
       )}
         {isInvalid && selectedValue == null && (
@@ -121,10 +118,10 @@ const Form = (props) => {
         .
       </p>
       <div>
-        <button type="reset" value="Reset" onClick={() => props.onChange3(true)}>
+        <button type="reset" value="Reset" onClick={() => props.getCancel(true)}>
           Cancel
         </button>
-        <button type="submit" value="Submit" onClick={() => props.onChange2(true,isInvalid)}>
+        <button type="submit" value="Submit" >
           Continue
         </button>
       </div>

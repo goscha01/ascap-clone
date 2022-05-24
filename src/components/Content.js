@@ -45,15 +45,15 @@ export default function Content(props) {
         setSelectedId(id); 
       };
 
-      const onChange2 = (some2, isInvalid) => {
+      const getCountinue = (isInvalid) => {
         setWarning(isInvalid)
-          console.log('isInvalid', isInvalid)
-          console.log('some2', some2)
-          setIsNext(some2);
-          console.log('isNext', isNext)
+        //   console.log('RECEIVED from FORM isInvalid', isInvalid)
+     
+        //   console.log('isNext', isNext)
+          props.getContionue2(isInvalid)
       }
 
-      const onChange3 = (some) => {
+      const getCancel = (some) => {
         console.log('some', some)
         setDisable(some);
         console.log('disable', disable)
@@ -76,7 +76,7 @@ export default function Content(props) {
 
             </div>
            
-            <Form onChange2={onChange2} onChange3={onChange3} selected={selectedId}/>
+            <Form getCountinue={getCountinue} getCancel={getCancel} selected={selectedId}/>
       </div>
 
      

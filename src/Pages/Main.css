@@ -1,0 +1,6 @@
+@import "../App.css";
+
+.content-membership {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

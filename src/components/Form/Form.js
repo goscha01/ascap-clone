@@ -1,5 +1,6 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
+import "./Form.css";
 
 const options = [
   {
@@ -38,35 +39,23 @@ const Form = (props) => {
   const [selectedValue, setSelectedValue] = useState(null);
   const [isInvalid, setIsInvalid] = useState(null);
 
-  
   useEffect(() => {
-
     props.getCountinue(isInvalid);
-    console.log("Insiden USEEFFECT inValid", isInvalid)
+  });
 
-})
-
-  // console.log("OUTSIDE OF clickHandler isInvalid ", isInvalid)
-  // console.log("selectedValue", selectedValue)
-  // console.log("props.selected", props.selected)
-
-  // console.log(selectedValue)
   const handleChange = (e) => {
-     setSelectedValue(e.value);
-   };
+    setSelectedValue(e.value);
+  };
 
   const handleSubmit = (e) => {
     if (props.selected !== null && selectedValue !== null) {
       setIsInvalid(false);
-      // console.log("set inVAlid to false")
     } else {
-      // console.log("set inVAlid to true")
       setIsInvalid(true);
     }
-  
+
     e.preventDefault();
   };
-
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
@@ -98,8 +87,10 @@ const Form = (props) => {
       {isInvalid && props.selected == null && (
         <p style={{ color: "red" }}>Please select your membership type.</p>
       )}
-        {isInvalid && selectedValue == null && (
-        <p style={{ color: "red" }}>Please select your publisher company type.</p>
+      {isInvalid && selectedValue == null && (
+        <p style={{ color: "red" }}>
+          Please select your publisher company type.
+        </p>
       )}
       <p>
         ASCAP uses TINCheck and SmartyStreets to verify certain information
@@ -118,10 +109,14 @@ const Form = (props) => {
         .
       </p>
       <div>
-        <button type="reset" value="Reset" onClick={() => props.getCancel(true)}>
+        <button
+          type="reset"
+          value="Reset"
+          onClick={() => props.getCancel(true)}
+        >
           Cancel
         </button>
-        <button type="submit" value="Submit" >
+        <button type="submit" value="Submit">
           Continue
         </button>
       </div>

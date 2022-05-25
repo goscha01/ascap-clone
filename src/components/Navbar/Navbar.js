@@ -1,3 +1,4 @@
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
@@ -6,7 +7,7 @@ const Navbar = () => {
         <img
           className="navbar-logo-small"
           alt="logo small"
-          src="/ASCAP_Note_Horizontal_Black.402e8647.png"
+          src="../../Assets/ASCAP_Note_Horizontal_Black.402e8647.png"
         />
         <img
           className="navbar-logo"

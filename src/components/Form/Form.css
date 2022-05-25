@@ -1,0 +1,62 @@
+form {
+  margin-left: 1rem;
+  position: relative;
+}
+
+form .select {
+  width: 80%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  padding-left: 0;
+}
+
+form label {
+  position: absolute;
+  transform: translate(20px, -2px);
+  color: #6d6d6d;
+  background-color: #fff;
+  font-size: small;
+  padding: 0 4px;
+  z-index: 2;
+}
+
+form p {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+form button {
+  padding: 0.5rem 4rem;
+  margin-right: 1.2rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+
+form button[type="submit"] {
+  background-color: #1178ce;
+  color: white;
+  border: 1px solid #1178ce;
+}
+
+form button[type="reset"] {
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  border: 1px solid #a7a7a7;
+}
+
+form button:hover {
+  filter: brightness(90%);
+}
+
+/* Select menu */
+
+.option > label {
+  padding: 0.3rem;
+  border-bottom: 1px solid #85868c;
+  background-color: red;
+  color: #1178ce;
+  text-decoration: underline;
+}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ASCAP App",
+  "name": "ASCAP Member Enrollment",
   "icons": [
     {
       "src": "favicon.ico",
